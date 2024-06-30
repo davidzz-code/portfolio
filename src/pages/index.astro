@@ -15,19 +15,19 @@ title="Portfolio de David Ramírez - Desarrollador y Programador Web"
 description="Portfolio de David Ramírez, Desarrollador Web y Músico. Desde Palma de Mallorca, España. Apasionado por la programación y la música, soy una persona motivada por el constante aprendizaje. Mi objetivo es aplicar mis habilidades en desarrollo web y seguir creciendo profesionalmente en este campo."
 >
 	<main>
-			<SectionContainer class="flex justify-center items-center ">
-				<div class="flex justify-center gap-x-20">
+			<SectionContainer class="flex justify-center items-center">
+				<div class="flex flex-col md:items-center md:flex-row md:gap-x-20">
 					<div>
 							<h1 class="text-7xl font-bold">David <br /> Ramírez</h1>
 							<h2 class="text-gray-400">Desarrollador Web y Músico</h2>
 					</div>
 					<div>
-							<h2 class="opacity-80 text-wrap">
+							<!-- <h2 class="opacity-80 text-pretty">
 								Desde Palma de Mallorca, España. Apasionado por la programación y
 								la música, soy una persona motivada por el constante aprendizaje.
 								Mi objetivo es aplicar mis habilidades en desarrollo web y seguir
 								creciendo profesionalmente en este campo.
-							</h2>
+							</h2> -->
 							<div class="py-5 flex gap-x-3">
 								<SocialPill href="https://www.linkedin.com/in/david-ram%C3%ADrez-ruiz-42899025a/">
 									<LinkedinIcon class="size-6" />
@@ -35,7 +35,7 @@ description="Portfolio de David Ramírez, Desarrollador Web y Músico. Desde Pal
 								<SocialPill  href="https://github.com/davidzz-code/">
 									<GitHubIcon class="size-6" colorHover="red"></GitHubIcon>
 								</SocialPill>
-								<SocialPill  href="https://github.com/davidzz-code/">
+								<SocialPill  href="mailto:rrdavid08@gmail.com">
 									<MailIcon class="size-6" colorHover="red"></MailIcon>
 								</SocialPill>
 							</div>
@@ -44,7 +44,12 @@ description="Portfolio de David Ramírez, Desarrollador Web y Músico. Desde Pal
 			</SectionContainer>
 
 			<SectionContainer id="experiencia">
-				<h2 class="text-4xl font-semibold mb-632">Experiencia</h2>
+				<h2 class="text-4xl font-semibold mb-6">Experiencia</h2>
+				<Experience />
+			</SectionContainer>
+
+			<SectionContainer id="experiencia">
+				<h2 class="text-4xl font-semibold mb-6">Proyetos</h2>
 				<Experience />
 			</SectionContainer>
 	</main>
