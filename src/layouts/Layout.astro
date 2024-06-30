@@ -20,9 +20,10 @@ const { description, title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-		<Header />
+		<div class="absolute top-0 z-[-2] h-screen w-screen bg-[#F8FBEE] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
 		<slot />
+		<!-- <div class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div> -->
+		<!-- <Header /> -->
 	</body>
 </html>
 <style is:global>
@@ -38,8 +39,7 @@ const { description, title } = Astro.props;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		/* background-color: #fff5ee; */
-		background: #050505;
+		background-color: #F8FBEE;
 		height: 100vh;
 	}
 </style>
