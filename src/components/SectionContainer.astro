@@ -1,3 +1,6 @@
-<section class={`flex justify-center items-center w-1/2 lg:w-[740px] h-screen  ${Astro.props.class}`}>
+---
+const { id, class: className } = Astro.props;
+---
+<section id={id} class={`w-1/2 lg:w-[740px] h-screen ${className}`}>
   <slot />
 </section>

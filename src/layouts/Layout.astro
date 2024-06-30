@@ -20,10 +20,10 @@ const { description, title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<div class="absolute top-0 z-[-2] h-screen w-screen bg-[#F8FBEE] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+		<!-- <div class="absolute top-0 z-[-2] h-screen w-screen bg-[#F8FBEE] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> -->
+		<div class="fixed top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+		<Header />
 		<slot />
-		<!-- <div class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div> -->
-		<!-- <Header /> -->
 	</body>
 </html>
 <style is:global>
@@ -33,6 +33,7 @@ const { description, title } = Astro.props;
 	}
 	html {
 		font-family: system-ui, sans-serif;
+		scroll-behavior: smooth; 
 	}
 
 	body{
@@ -42,4 +43,15 @@ const { description, title } = Astro.props;
 		background-color: #F8FBEE;
 		height: 100vh;
 	}
+
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+	}
+	/* media (prefers-color-scheme: dark) {
+		:root {
+			--color-neutral-950: #1A1A1A;
+		}
+	} */
 </style>
