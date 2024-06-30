@@ -1,16 +1,41 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Badge from '../components/Badge.astro';
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import LinkedinIcon from "../components/icons/Linkedin.astro";
+import GitHubIcon from "../components/icons/GitHub.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import SocialPill from "../components/SocialPill.astro";
 ---
 
-<Layout title="Welcome to Astro">
+<Layout
+title="Portfolio de David Ramírez - Desarrollador y Programador Web"
+description="Portfolio de David Ramírez, Desarrollador Web y Músico. Desde Palma de Mallorca, España. Apasionado por la programación y la música, soy una persona motivada por el constante aprendizaje. Mi objetivo es aplicar mis habilidades en desarrollo web y seguir creciendo profesionalmente en este campo."
+>
 	<main>
-		<section class="flex">
-			<div>
-				<h1 class="text-white border border-red-500">David <br> Ramírez</h1>
-				<h2></h2>
-			</div>
-			<h2>Desarrollador Web y Músico. De Palma de Mallorca, España. Especializado en crear aplicaciones únicas</h2>
-		</section>
-		</main>
+      <section class="flex gap-x-20 w-full mx-auto lg:w-[740px] py-44">
+				<div>
+            <h1 class="text-white text-7xl font-bold">David <br /> Ramírez</h1>
+            <h2 class="text-gray-400">Desarrollador Web y Músico</h2>
+				</div>
+				<div>
+            <h2 class="opacity-80 text-wrap">
+							Desde Palma de Mallorca, España. Apasionado por la programación y
+							la música, soy una persona motivada por el constante aprendizaje.
+							Mi objetivo es aplicar mis habilidades en desarrollo web y seguir
+							creciendo profesionalmente en este campo.
+            </h2>
+            <div class="py-5 flex gap-x-3">
+							<SocialPill href="https://www.linkedin.com/in/david-ram%C3%ADrez-ruiz-42899025a/">
+								<LinkedinIcon class="size-6" />
+							</SocialPill>
+							<SocialPill  href="https://github.com/davidzz-code/">
+								<GitHubIcon class="size-6" colorHover="red"></GitHubIcon>
+							</SocialPill>
+							<SocialPill  href="https://github.com/davidzz-code/">
+								<MailIcon class="size-6" colorHover="red"></MailIcon>
+							</SocialPill>
+            </div>
+				</div>
+      </section>
+	</main>
 </Layout>
