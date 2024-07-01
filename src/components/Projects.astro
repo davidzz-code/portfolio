@@ -1,0 +1,72 @@
+---
+import Card from "./Card.astro"
+import TailwindIcon from "./icons/Tailwind.astro"
+import JavascriptIcon from "./icons/Javascript.astro"
+
+
+const TAGS = {
+    TAILWIND: {
+      name: "Tailwind CSS",
+      bgColor: "bg-[#003159]",
+      textColor: "text-white",
+      icon: TailwindIcon,
+    },
+    JAVASCRIPT: {
+      name: "JavaScript",
+      bgColor: "bg-yellow-600",
+      textColor: "text-black",
+      icon: JavascriptIcon,
+    },
+}
+
+const PROJECTS = [
+  {
+    title: "Granny's Recipes",
+    description: "Desarrollado en equipo, creamos una plataforma donde puedes buscar, guardar recetas y dejar tus comentarios. Usamos la API 'themealDB' para las recetas y aprendimos Bootstrap para el diseño, además de trabajar con tecnologías como 'indexDB' y 'Google Maps API' para la base de datos y la ubicación.",
+    link: "https://grannys-recipes.netlify.app/",
+    github: "https://github.com/davidzz-code/granny_recipes.git",
+    image: "/projects/grannys-recipes.webp",
+    tags: [TAGS.TAILWIND, TAGS.JAVASCRIPT]
+  },
+  {
+    title: "Project 2",
+    description: "This is a description of project 2",
+    link: "https://example.com",
+    github: "https://github.com",
+    image: "/images/project2.png",
+    tags: ["React", "Tailwind CSS"]
+  },
+  {
+    title: "Project 3",
+    description: "This is a description of project 3",
+    link: "https://example.com",
+    github: "https://github.com",
+    image: "/images/project3.png",
+    tags: ["Vue", "Sass"]
+  },
+  {
+    title: "Project 4",
+    description: "This is a description of project 4",
+    link: "https://example.com",
+    github: "https://github.com",
+    image: "/images/project6.png",
+    tags: ["Angular", "Bootstrap"]
+  },
+]
+---
+<div class="grid grid-cols-1 gap-3">
+  {
+    PROJECTS.map((project, index) => (
+      <Card
+        class="w-full"
+        title={project.title}
+        description={project.description}
+        link={project.link}
+        github={project.github}
+        image={project.image}
+        tags={project.tags}
+        key={index}
+      />
+    ))
+  }
+</div>
