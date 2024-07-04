@@ -1,7 +1,7 @@
 ---
-import Card from "./Card.astro"
 import TailwindIcon from "./icons/Tailwind.astro"
 import JavascriptIcon from "./icons/Javascript.astro"
+import GitHub from "./icons/GitHub.astro"
 
 
 const TAGS = {
@@ -22,27 +22,27 @@ const TAGS = {
 const PROJECTS = [
   {
     title: "Granny's Recipes",
-    description: "Desarrollado en equipo, creamos una plataforma donde puedes buscar, guardar recetas y dejar tus comentarios. Usamos la API 'themealDB' para las recetas y aprendimos Bootstrap para el diseño, además de trabajar con tecnologías como 'indexDB' y 'Google Maps API' para la base de datos y la ubicación.",
+    description: "En equipo, creamos una plataforma para buscar, guardar recetas y dejar comentarios, usando la API 'themealDB' y Bootstrap para el diseño. También trabajamos con 'indexDB' para la base de datos y 'Google Maps API' para la ubicación.",
     link: "https://grannys-recipes.netlify.app/",
     github: "https://github.com/davidzz-code/granny_recipes.git",
     image: "/projects/grannys-recipes.webp",
     tags: [TAGS.TAILWIND, TAGS.JAVASCRIPT]
   },
   {
-    title: "Project 2",
-    description: "This is a description of project 2",
-    link: "https://example.com",
+    title: "Barbaro",
+    description: "En equipo, creamos una plataforma para buscar, guardar recetas y dejar comentarios, usando la API 'themealDB' y Bootstrap para el diseño. También trabajamos con 'indexDB' para la base de datos y 'Google Maps API' para la ubicación.",
+    link: "http://barbaro.randion.es",
     github: "https://github.com",
-    image: "/images/project2.png",
-    tags: ["React", "Tailwind CSS"]
+    image: "/projects/barbaro.webp",
+    tags: [TAGS.TAILWIND, TAGS.JAVASCRIPT]
   },
   {
-    title: "Project 3",
+    title: "Galeria de imágenes design",
     description: "This is a description of project 3",
-    link: "https://example.com",
-    github: "https://github.com",
-    image: "/images/project3.png",
-    tags: ["Vue", "Sass"]
+    link: "https://galeria-paises.netlify.app",
+    github: "https://github.com/davidzz-code/Galeria.git",
+    image: "/projects/galeria.webp",
+    tags: [TAGS.TAILWIND, TAGS.JAVASCRIPT]
   },
   {
     title: "Project 4",
@@ -56,17 +56,42 @@ const PROJECTS = [
 ---
 <div class="grid grid-cols-1 gap-3">
   {
-    PROJECTS.map((project, index) => (
-      <Card
-        class="w-full"
-        title={project.title}
-        description={project.description}
-        link={project.link}
-        github={project.github}
-        image={project.image}
-        tags={project.tags}
-        key={index}
-      />
+    PROJECTS.map(({image, title, description, tags, link, github}) => (
+      <article class="group flex gap-x-7 mb-10">
+        <div class="w-1/2 overflow-hidden rounded-lg">
+          <img
+            class="w-full object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-110"
+            src={image}
+            alt={`Captura de pantalla del proyecto: '${title}'`}
+          />
+        </div>
+        <div class="w-1/2 flex flex-col justify-between">
+          <div>
+            <h3 class="text-3xl font-bold">{title}</h3>
+            <ul>
+              {tags.map((tag: any) =>
+                <span class={`inline-flex cursor-pointer items-center justify-center rounded-full border border-gray-800 ${tag.bgColor} px-2 py-1 mx-1 my-3 text-xs font-medium backdrop-blur-3xl`}>
+                  <span class={`flex gap-x-2 items-center ${tag.textColor}`}>
+                    {tag.icon && <tag.icon class="size-3" />}
+                    {tag.name}
+                  </span>
+                </span>
+              )}
+            </ul>
+            <p class="text-gray-400 text-pretty">{description}</p>
+          </div>
+          <div class="mt-auto flex gap-x-2">
+            <a class="text-sm flex gap-x-2 items-center p-1 cursor-pointer border border-gray-400 rounded-md hover:scale-105 hover:bg-white/20 transition">
+              <GitHub class="size-5 text-gray-50" />
+              Código
+            </a>
+            <a class="text-sm flex gap-x-2 items-center p-1 cursor-pointer border border-gray-400 rounded-md hover:scale-105 hover:bg-white/20 transition">
+              <GitHub class="size-5 text-gray-50" />
+              Visualizar
+            </a>
+          </div>
+        </div>
+      </article>
     ))
   }
 </div>
