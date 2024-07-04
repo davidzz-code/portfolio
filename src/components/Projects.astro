@@ -1,6 +1,8 @@
 ---
 import TailwindIcon from "./icons/Tailwind.astro"
 import JavascriptIcon from "./icons/Javascript.astro"
+import VueIcon from "./icons/Vue.astro"
+import BootstrapIcon from "./icons/Bootstrap.astro"
 import GitHub from "./icons/GitHub.astro"
 
 
@@ -17,6 +19,18 @@ const TAGS = {
       textColor: "text-black",
       icon: JavascriptIcon,
     },
+    VUE: {
+      name: "Vue.js",
+      bgColor: "bg-[#42B782]",
+      textColor: "text-black",
+      icon: VueIcon,
+    },
+    BOOTSTRAP: {
+      name: "Bootstrap",
+      bgColor: "bg-[#7911F9]",
+      textColor: "text-white",
+      icon: BootstrapIcon,
+    },
 }
 
 const PROJECTS = [
@@ -26,7 +40,7 @@ const PROJECTS = [
     link: "https://grannys-recipes.netlify.app/",
     github: "https://github.com/davidzz-code/granny_recipes.git",
     image: "/projects/grannys-recipes.webp",
-    tags: [TAGS.TAILWIND, TAGS.JAVASCRIPT]
+    tags: [TAGS.BOOTSTRAP, TAGS.JAVASCRIPT]
   },
   {
     title: "Barbaro",
@@ -34,7 +48,7 @@ const PROJECTS = [
     link: "http://barbaro.randion.es",
     github: "https://github.com",
     image: "/projects/barbaro.webp",
-    tags: [TAGS.TAILWIND, TAGS.JAVASCRIPT]
+    tags: [TAGS.VUE, TAGS.JAVASCRIPT]
   },
   {
     title: "Galeria de imágenes design",
