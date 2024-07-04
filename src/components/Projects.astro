@@ -3,7 +3,9 @@ import TailwindIcon from "./icons/Tailwind.astro"
 import JavascriptIcon from "./icons/Javascript.astro"
 import VueIcon from "./icons/Vue.astro"
 import BootstrapIcon from "./icons/Bootstrap.astro"
+import LaravelIcon from "./icons/Laravel.astro"
 import GitHub from "./icons/GitHub.astro"
+import LinkIcon from "./icons/Link.astro"
 
 
 const TAGS = {
@@ -13,9 +15,15 @@ const TAGS = {
       textColor: "text-white",
       icon: TailwindIcon,
     },
+    CSS: {
+      name: "CSS",
+      bgColor: "bg-blue-800",
+      textColor: "text-white",
+      icon: TailwindIcon,
+    },
     JAVASCRIPT: {
       name: "JavaScript",
-      bgColor: "bg-yellow-600",
+      bgColor: "bg-yellow-500",
       textColor: "text-black",
       icon: JavascriptIcon,
     },
@@ -27,9 +35,15 @@ const TAGS = {
     },
     BOOTSTRAP: {
       name: "Bootstrap",
-      bgColor: "bg-[#7911F9]",
+      bgColor: "bg-[#7911F9]/70",
       textColor: "text-white",
       icon: BootstrapIcon,
+    },
+    LARAVEL: {
+      name: "Laravel",
+      bgColor: "bg-red-500",
+      textColor: "text-black",
+      icon: LaravelIcon,
     },
 }
 
@@ -40,15 +54,15 @@ const PROJECTS = [
     link: "https://grannys-recipes.netlify.app/",
     github: "https://github.com/davidzz-code/granny_recipes.git",
     image: "/projects/grannys-recipes.webp",
-    tags: [TAGS.BOOTSTRAP, TAGS.JAVASCRIPT]
+    tags: [TAGS.JAVASCRIPT, TAGS.BOOTSTRAP,]
   },
   {
-    title: "Barbaro",
+    title: "Bárbaro",
     description: "En equipo, creamos una plataforma para buscar, guardar recetas y dejar comentarios, usando la API 'themealDB' y Bootstrap para el diseño. También trabajamos con 'indexDB' para la base de datos y 'Google Maps API' para la ubicación.",
     link: "http://barbaro.randion.es",
     github: "https://github.com",
     image: "/projects/barbaro.webp",
-    tags: [TAGS.VUE, TAGS.JAVASCRIPT]
+    tags: [TAGS.VUE, TAGS.LARAVEL]
   },
   {
     title: "Galeria de imágenes design",
@@ -56,15 +70,7 @@ const PROJECTS = [
     link: "https://galeria-paises.netlify.app",
     github: "https://github.com/davidzz-code/Galeria.git",
     image: "/projects/galeria.webp",
-    tags: [TAGS.TAILWIND, TAGS.JAVASCRIPT]
-  },
-  {
-    title: "Project 4",
-    description: "This is a description of project 4",
-    link: "https://example.com",
-    github: "https://github.com",
-    image: "/images/project6.png",
-    tags: ["Angular", "Bootstrap"]
+    tags: [TAGS.CSS, TAGS.JAVASCRIPT]
   },
 ]
 ---
@@ -84,7 +90,7 @@ const PROJECTS = [
             <h3 class="text-3xl font-bold">{title}</h3>
             <ul>
               {tags.map((tag: any) =>
-                <span class={`inline-flex cursor-pointer items-center justify-center rounded-full border border-gray-800 ${tag.bgColor} px-2 py-1 mx-1 my-3 text-xs font-medium backdrop-blur-3xl`}>
+                <span class={`opacity-90 inline-flex items-center justify-center rounded-full border border-gray-800 ${tag.bgColor} px-2 py-1 mx-1 my-3 text-xs font-medium backdrop-blur-3xl`}>
                   <span class={`flex gap-x-2 items-center ${tag.textColor}`}>
                     {tag.icon && <tag.icon class="size-3" />}
                     {tag.name}
@@ -95,13 +101,19 @@ const PROJECTS = [
             <p class="text-gray-400 text-pretty">{description}</p>
           </div>
           <div class="mt-auto flex gap-x-2">
-            <a class="text-sm flex gap-x-2 items-center p-1 cursor-pointer border border-gray-400 rounded-md hover:scale-105 hover:bg-white/20 transition">
+            <a 
+              class="text-sm flex gap-x-2 items-center p-1 cursor-pointer border border-gray-400 rounded-md hover:scale-105 hover:bg-white/20 transition"
+              href="{github}"  
+            >
               <GitHub class="size-5 text-gray-50" />
               Código
             </a>
-            <a class="text-sm flex gap-x-2 items-center p-1 cursor-pointer border border-gray-400 rounded-md hover:scale-105 hover:bg-white/20 transition">
-              <GitHub class="size-5 text-gray-50" />
-              Visualizar
+            <a 
+              class="text-sm flex gap-x-2 items-center p-1 cursor-pointer border border-gray-400 rounded-md hover:scale-105 hover:bg-white/20 transition"
+              href="{link}"
+            >
+              <LinkIcon class="size-5 text-gray-50" />
+              Visitar
             </a>
           </div>
         </div>
