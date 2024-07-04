@@ -4,6 +4,8 @@ import JavascriptIcon from "./icons/Javascript.astro"
 import VueIcon from "./icons/Vue.astro"
 import BootstrapIcon from "./icons/Bootstrap.astro"
 import LaravelIcon from "./icons/Laravel.astro"
+import AngularIcon from "./icons/Angular.astro"
+import NodeIcon from "./icons/Node.astro"
 import GitHub from "./icons/GitHub.astro"
 import LinkIcon from "./icons/Link.astro"
 
@@ -41,9 +43,21 @@ const TAGS = {
     },
     LARAVEL: {
       name: "Laravel",
-      bgColor: "bg-red-500",
-      textColor: "text-black",
+      bgColor: "bg-black",
+      textColor: "text-[#FB2E22]",
       icon: LaravelIcon,
+    },
+    ANGULAR: {
+      name: "Angular",
+      bgColor: "bg-[#B63031]",
+      textColor: "text-white",
+      icon: AngularIcon,
+    },
+    NODEJS: {
+      name: "Node.js",
+      bgColor: "bg-black",
+      textColor: "text-[#84CD29]",
+      icon: NodeIcon,
     },
 }
 
@@ -71,6 +85,13 @@ const PROJECTS = [
     github: "https://github.com/davidzz-code/Galeria.git",
     image: "/projects/galeria.webp",
     tags: [TAGS.CSS, TAGS.JAVASCRIPT]
+  },
+  {
+    title: "Clon de Spotify",
+    description: "Clon de Spotify",
+    github: "https://github.com/davidzz-code/Spotify-Angular-clone.git",
+    image: "/projects/spotify-clone.webp",
+    tags: [TAGS.ANGULAR, TAGS.NODEJS]
   },
 ]
 ---
@@ -103,18 +124,23 @@ const PROJECTS = [
           <div class="mt-auto flex gap-x-2">
             <a 
               class="text-sm flex gap-x-2 items-center p-1 cursor-pointer border border-gray-400 rounded-md hover:scale-105 hover:bg-white/20 transition"
-              href="{github}"  
+              href={github}
+              target="_blank"
             >
               <GitHub class="size-5 text-gray-50" />
               Código
             </a>
-            <a 
-              class="text-sm flex gap-x-2 items-center p-1 cursor-pointer border border-gray-400 rounded-md hover:scale-105 hover:bg-white/20 transition"
-              href="{link}"
-            >
-              <LinkIcon class="size-5 text-gray-50" />
-              Visitar
-            </a>
+            {
+              link &&
+              <a 
+                class="text-sm flex gap-x-2 items-center p-1 cursor-pointer border border-gray-400 rounded-md hover:scale-105 hover:bg-white/20 transition"
+                href={link}
+                target="_blank"
+              >
+                <LinkIcon class="size-5 text-gray-50" />
+                Visitar
+              </a>
+            }
           </div>
         </div>
       </article>
