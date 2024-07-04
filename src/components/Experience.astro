@@ -3,46 +3,11 @@ import ExperienceItem from "./ExperienceItem.astro";
 
 const EXPERIENCE = [
   {
-      date: "Feb 2020 - Jun 2021",
-      title: "Frontend Developer",
-      company: "Company Name",
+      date: "Mar 2024 - Jun 2024",
+      title: "Prácticas en Desarrollo Web",
+      company: "Omniaccess",
       description:
-        "Worked on a team of 5 to develop a new e-commerce platform using React and Tailwind CSS.",
-  },
-  {
-      date: "May 2019 - Sep 2020",
-      title: "Web Developer",
-      company: "Company Name",
-      description:
-        "Developed a new website for a local business using HTML, CSS, and JavaScript.",
-  },
-  {
-      date: "Jun 2018 - Sep 2019",
-      title: "Intern",
-      company: "Company Name",
-      description:
-        "Assisted with various web development projects and learned about the industry.",
-  },
-  {
-      date: "Jun 2018 - Sep 2019",
-      title: "Intern",
-      company: "Company Name",
-      description:
-        "Assisted with various web development projects and learned about the industry.",
-  },
-  {
-      date: "Jun 2018 - Sep 2019",
-      title: "Intern",
-      company: "Company Name",
-      description:
-        "Assisted with various web development projects and learned about the industry.",
-  },
-  {
-      date: "Jun 2018 - Sep 2019",
-      title: "Intern",
-      company: "Company Name",
-      description:
-        "Assisted with various web development projects and learned about the industry.",
+        "En Omniaccess, trabajé en proyectos de desarrollo web para cruceros, mejorando mis habilidades en Vue, Node.js y Tailwind, y aprendiendo a trabajar en equipo con Git y gestionar deadlines.",
   },
 ];
 ---
@@ -50,7 +15,7 @@ const EXPERIENCE = [
 <ol class="relative border-s border-gray-200 dark:border-gray-700">
   {
       EXPERIENCE.map((experience) => (
-        <li class="mb-10 ms-4">
+        <li class="mb-10 ms-4 text-pretty w-full md:w-3/4">
           <ExperienceItem {...experience} />
         </li>
       ))
