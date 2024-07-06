@@ -64,7 +64,7 @@ const TAGS = {
 const PROJECTS = [
   {
     title: "Granny's Recipes",
-    description: "En equipo, creamos una plataforma para buscar, guardar recetas y dejar comentarios, usando la API 'themealDB' y Bootstrap para el diseño. También trabajamos con 'indexDB' para la base de datos y 'Google Maps API' para la ubicación.",
+    description: "Una plataforma para buscar y guardar recetas, dejar comentarios, y visualizar ubicaciones. Utiliza la API 'themealDB' y Bootstrap para el diseño, 'indexDB' para la base de datos, y 'Google Maps API' para la geolocalización.",
     link: "https://grannys-recipes.netlify.app/",
     github: "https://github.com/davidzz-code/granny_recipes.git",
     image: "/projects/grannys-recipes.webp",
@@ -92,6 +92,14 @@ const PROJECTS = [
     github: "https://github.com/davidzz-code/Spotify-Angular-clone.git",
     image: "/projects/spotify-clone.webp",
     tags: [TAGS.ANGULAR, TAGS.NODEJS]
+  },
+  {
+    title: "CRUD de publicaciones",
+    description: "Desarrollé un CRUD en Laravel en el que poder ver, editar, crear y borrar publicaciones. Además incluye registro de usuarios, autenticación para las distintas funcionalidades, uso de localización de Laravel para cambiar el idioma y  Tailwind para el diseño.",
+    github: "https://github.com/davidzz-code/crud_publicaciones.git",
+    link: "https://dramirezruiz.randion.es/formulario_laravel_posts/public",
+    image: "/projects/publicaciones.webp",
+    tags: [TAGS.LARAVEL, TAGS.TAILWIND]
   },
 ]
 ---
@@ -123,21 +131,21 @@ const PROJECTS = [
           </div>
           <div class="mt-auto flex gap-x-2">
             <a 
-              class="text-sm flex gap-x-2 items-center p-1 cursor-pointer border border-gray-400 rounded-md hover:scale-105 hover:bg-white/20 transition"
+              class="text-sm flex gap-x-2 items-center p-1 cursor-pointer border border-gray-700 dark:border-gray-400 rounded-md hover:scale-105 hover:bg-white/20 transition"
               href={github}
               target="_blank"
             >
-              <GitHub class="size-5 text-gray-50" />
+              <GitHub class="size-5 dark:text-gray-50" />
               Código
             </a>
             {
               link &&
               <a 
-                class="text-sm flex gap-x-2 items-center p-1 cursor-pointer border border-gray-400 rounded-md hover:scale-105 hover:bg-white/20 transition"
+                class="text-sm flex gap-x-2 items-center p-1 cursor-pointer border border-gray-700 dark:border-gray-400 rounded-md hover:scale-105 hover:bg-white/20 transition"
                 href={link}
                 target="_blank"
               >
-                <LinkIcon class="size-5 text-gray-50" />
+                <LinkIcon class="size-5 dark:text-gray-50" />
                 Visitar
               </a>
             }
