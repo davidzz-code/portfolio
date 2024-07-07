@@ -1,7 +1,11 @@
+---
+const {id, href, class: className } = Astro.props;
+---
 <a
-  {...Astro.props}
+  id={id}
+  href={href}
   target="_blank"
   rel="noopener"
-  class="p-3 border border-gray-400 rounded-full hover:scale-110 hover:bg-white/20 transition">
+  class={`p-3 border border-gray-400 cursor-pointer rounded-full hover:scale-110 dark:hover:bg-white/20 hover:bg-gray-500/20 transition ${className}`}>
     <slot />
   </a>

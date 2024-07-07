@@ -34,10 +34,13 @@ description="Portfolio de David Ramírez, Desarrollador Web y Músico. Desde Pal
 									<LinkedinIcon class="size-6" />
 								</SocialPill>
 								<SocialPill  href="https://github.com/davidzz-code/">
-									<GitHubIcon class="size-6" colorHover="red"></GitHubIcon>
+									<GitHubIcon class="size-6"></GitHubIcon>
 								</SocialPill>
-								<SocialPill  href="mailto:rrdavid08@gmail.com">
-									<MailIcon class="size-6" colorHover="red"></MailIcon>
+								<SocialPill id="mail-button" class="relative group">
+									<MailIcon class="size-6"></MailIcon>
+									<span id="mail-text" class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-32 bg-black text-white dark:bg-gray-200 dark:text-black text-center text-xs rounded py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+										Copiar email
+									</span>
 								</SocialPill>
 							</div>
 					</div>
@@ -55,3 +58,25 @@ description="Portfolio de David Ramírez, Desarrollador Web y Músico. Desde Pal
 			</SectionContainer>
 	</main>
 </Layout>
+<script>
+	const mail: string = 'rrdavid08@gmail.com';
+	const mailButton = document.getElementById('mail-button');
+	let mailText: any = document.getElementById('mail-text');
+
+	mailButton?.addEventListener('click', async () => await writeClipboardText(mail))
+
+	const writeClipboardText = async (text: string) => {
+		try {
+			console.log('copiado')
+			await navigator.clipboard.writeText(text);
+			if (mailText) {
+				mailText.textContent = 'Email copiado ✅'
+				setTimeout(() => {
+					mailText.textContent = 'Copiar email'
+				}, 2000);
+			}
+		} catch (error: any) {
+			console.error(error.message)
+		}
+	}
+</script>
