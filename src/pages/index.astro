@@ -74,7 +74,6 @@ description="Portfolio de David Ramírez, Desarrollador Web y Músico. Desde Pal
 
 	const writeClipboardText = async (text: string) => {
 		try {
-			console.log('copiado')
 			await navigator.clipboard.writeText(text);
 			if (mailText) {
 				mailText.textContent = 'Email copiado ✅'
