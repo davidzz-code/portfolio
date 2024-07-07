@@ -4,8 +4,9 @@ import Badge from "../components/Badge.astro";
 import LinkedinIcon from "../components/icons/Linkedin.astro";
 import GitHubIcon from "../components/icons/GitHub.astro";
 import MailIcon from "../components/icons/Mail.astro";
+import CodeIcon from "../components/icons/Code.astro";
+import BriefcaseIcon from "../components/icons/Briefcase.astro";
 import SocialPill from "../components/SocialPill.astro";
-import ExperienceItem from "../components/ExperienceItem.astro";
 import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Projects from "../components/Projects.astro";
@@ -47,13 +48,19 @@ description="Portfolio de David Ramírez, Desarrollador Web y Músico. Desde Pal
 				</div>
 			</SectionContainer>
 
-			<SectionContainer id="proyectos" class="mb-52">
-				<h2 class="text-4xl font-semibold mb-10">Proyectos</h2>
+			<SectionContainer id="proyectos" class="mb-40">
+				<div class="flex items-center gap-x-2 mb-10">
+					<CodeIcon class="size-8"/>
+					<h2 class="text-4xl font-semibold">Proyectos</h2>
+				</div>
 				<Projects />
 			</SectionContainer>
 
-			<SectionContainer id="experiencia" class="mb-52">
-				<h2 class="text-4xl font-semibold mb-6">Experiencia</h2>
+			<SectionContainer id="experiencia" class="mb-40">
+				<div class="flex items-center gap-x-2 mb-10">
+					<BriefcaseIcon class="size-8"/>
+					<h2 class="text-4xl font-semibold">Experiencia</h2>
+				</div>
 				<Experience />
 			</SectionContainer>
 	</main>
