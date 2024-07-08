@@ -30,19 +30,24 @@ description="Portfolio de David Ramírez, Desarrollador Web y Músico. Desde Pal
 								Mi objetivo es aplicar mis habilidades en desarrollo web y seguir
 								creciendo profesionalmente en este campo.
 							</h2> -->
-							<div class="py-5 flex gap-x-3">
-								<SocialPill href="https://www.linkedin.com/in/david-ram%C3%ADrez-ruiz-42899025a/">
-									<LinkedinIcon class="size-6" />
-								</SocialPill>
-								<SocialPill  href="https://github.com/davidzz-code/">
-									<GitHubIcon class="size-6"></GitHubIcon>
-								</SocialPill>
-								<SocialPill id="mail-button" class="relative group">
-									<MailIcon class="size-6"></MailIcon>
-									<span id="mail-text" class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-32 bg-black text-white dark:bg-gray-200 dark:text-black text-center text-xs rounded py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-										Copiar email
-									</span>
-								</SocialPill>
+							<div class="py-5 flex flex-col gap-y-10 items-center">
+								<a href="https://www.linkedin.com/in/david-ram%C3%ADrez-ruiz-42899025a/" target="_blank">
+									<Badge>Disponible para trabajar</Badge>
+								</a>
+								<div class="flex gap-x-3">
+									<SocialPill href="https://www.linkedin.com/in/david-ram%C3%ADrez-ruiz-42899025a/">
+										<LinkedinIcon class="size-6" />
+									</SocialPill>
+									<SocialPill  href="https://github.com/davidzz-code/">
+										<GitHubIcon class="size-6"></GitHubIcon>
+									</SocialPill>
+									<SocialPill id="mail-button" class="relative group">
+										<MailIcon class="size-6"></MailIcon>
+										<span id="mail-text" class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-32 bg-black text-white dark:bg-gray-200 dark:text-black text-center text-xs rounded py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+											Copiar email
+										</span>
+									</SocialPill>
+								</div>
 							</div>
 					</div>
 				</div>
@@ -66,9 +71,9 @@ description="Portfolio de David Ramírez, Desarrollador Web y Músico. Desde Pal
 	</main>
 </Layout>
 <script>
-	const mail: string = 'rrdavid08@gmail.com';
+	const mail = 'rrdavid08@gmail.com';
 	const mailButton = document.getElementById('mail-button');
-	let mailText: any = document.getElementById('mail-text');
+	let mailText = document.getElementById('mail-text');
 
 	mailButton?.addEventListener('click', async () => await writeClipboardText(mail))
 
