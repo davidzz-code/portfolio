@@ -64,6 +64,7 @@ const TAGS = {
 const PROJECTS = [
   {
     title: "Granny's Recipes",
+    subtitle: "Buscador de recetas",
     description: "Una plataforma para buscar y guardar recetas, dejar comentarios, y visualizar ubicaciones. Utiliza la API 'themealDB' y Bootstrap para el diseño, 'indexDB' para la base de datos, y 'Google Maps API' para la geolocalización.",
     link: "https://grannys-recipes.netlify.app/",
     github: "https://github.com/davidzz-code/granny_recipes.git",
@@ -72,7 +73,8 @@ const PROJECTS = [
   },
   {
     title: "Bárbaro",
-    description: "En equipo, creamos una plataforma para buscar, guardar recetas y dejar comentarios, usando la API 'themealDB' y Bootstrap para el diseño. También trabajamos con 'indexDB' para la base de datos y 'Google Maps API' para la ubicación.",
+    subtitle: "Gestión de una barbería",
+    description: "Se trata de una web para gestionar una peluquería",
     link: "http://barbaro.randion.es",
     github: "https://github.com",
     image: "/projects/barbaro.webp",
@@ -80,6 +82,7 @@ const PROJECTS = [
   },
   {
     title: "Galeria de imágenes design",
+    subtitle: "Rediseño",
     description: "This is a description of project 3",
     link: "https://galeria-paises.netlify.app",
     github: "https://github.com/davidzz-code/Galeria.git",
@@ -88,13 +91,14 @@ const PROJECTS = [
   },
   {
     title: "Clon de Spotify",
-    description: "Clon de Spotify",
+    description: "Aprendí las bases de Angular a través de un curso de Udemy impartido por Lerian NOseque. Es un clon de la famosa plataforma Spotify en la que podemos reproducir música, usar la barra de tiempo para moverse a través de la canción o buscar canciones.",
     github: "https://github.com/davidzz-code/Spotify-Angular-clone.git",
     image: "/projects/spotify-clone.webp",
     tags: [TAGS.ANGULAR, TAGS.NODEJS]
   },
   {
-    title: "CRUD de publicaciones",
+    title: "Posts",
+    subtitle: "Plataforma para escribir y publicar textos",
     description: "Desarrollé un CRUD en Laravel en el que poder ver, editar, crear y borrar publicaciones. Además incluye registro de usuarios, autenticación para las distintas funcionalidades, uso de localización de Laravel para cambiar el idioma y  Tailwind para el diseño.",
     github: "https://github.com/davidzz-code/crud_publicaciones.git",
     link: "https://dramirezruiz.randion.es/formulario_laravel_posts/public",
@@ -105,7 +109,7 @@ const PROJECTS = [
 ---
 <div class="grid grid-cols-1">
   {
-    PROJECTS.map(({image, title, description, tags, link, github}) => (
+    PROJECTS.map(({image, title, subtitle, description, tags, link, github}) => (
       <article class="group flex gap-x-7 mb-20">
         <div class="w-1/2 overflow-hidden rounded-lg">
           <img
@@ -116,7 +120,7 @@ const PROJECTS = [
         </div>
         <div class="w-1/2 flex flex-col justify-between">
           <div>
-            <h3 class="text-3xl font-bold">{title}</h3>
+            <h3 class="text-3xl font-bold">{title} - <span>{subtitle}</span></h3>
             <ul>
               {tags.map((tag: any) =>
                 <span class={`opacity-90 inline-flex items-center justify-center rounded-full border border-gray-800 ${tag.bgColor} px-2 py-1 mx-1 my-3 text-xs font-medium backdrop-blur-3xl`}>
