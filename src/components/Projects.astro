@@ -1,5 +1,6 @@
 ---
 import TailwindIcon from "./icons/Tailwind.astro"
+import CSSIcon from "./icons/CSS.astro"
 import JavascriptIcon from "./icons/Javascript.astro"
 import VueIcon from "./icons/Vue.astro"
 import BootstrapIcon from "./icons/Bootstrap.astro"
@@ -21,7 +22,7 @@ const TAGS = {
       name: "CSS",
       bgColor: "bg-blue-800",
       textColor: "text-white",
-      icon: TailwindIcon,
+      icon: CSSIcon,
     },
     JAVASCRIPT: {
       name: "JavaScript",
@@ -74,16 +75,16 @@ const PROJECTS = [
   {
     title: "Bárbaro",
     subtitle: "Gestión de una barbería",
-    description: "Se trata de una web para gestionar una peluquería. Se basa en diferentes intranets para distintos roles. Incluye un sistema de citas, un sistema de horarios y una gestión de servicios y empleados. Utiliza Vue.js para el frontend y Laravel para el backend.",
+    description: "Se basa en diferentes intranets para distintos roles. Incluye un sistema de citas, un sistema de horarios y una gestión de servicios y empleados. Utiliza Vue.js para el frontend y Laravel para el backend.",
     link: "http://barbaro.randion.es",
     github: "https://github.com",
     image: "/projects/barbaro.webp",
     tags: [TAGS.VUE, TAGS.LARAVEL]
   },
   {
-    title: "Galeria de imágenes design",
+    title: "Galeria de imágenes",
     subtitle: "Rediseño",
-    description: "This is a description of project 3",
+    description: "A través de un curso de Udemy desarrollé una galería de imágenes de diferentes temáticas. El curso ofrece un diseño pero decidí rediseñar toda la web para crear un estilo más personal.",
     link: "https://galeria-paises.netlify.app",
     github: "https://github.com/davidzz-code/Galeria.git",
     image: "/projects/galeria.webp",
@@ -99,7 +100,7 @@ const PROJECTS = [
   {
     title: "Posts",
     subtitle: "Plataforma para escribir y publicar textos",
-    description: "Desarrollé un CRUD en Laravel en el que poder ver, editar, crear y borrar publicaciones. Además incluye registro de usuarios, autenticación para las distintas funcionalidades, uso de localización de Laravel para cambiar el idioma y  Tailwind para el diseño.",
+    description: "Desarrollé un CRUD en Laravel de publicaciones. Además incluye registro de usuarios, autenticación para las distintas funcionalidades, uso de localización de Laravel para cambiar el idioma y  Tailwind para el diseño.",
     github: "https://github.com/davidzz-code/crud_publicaciones.git",
     link: "https://dramirezruiz.randion.es/formulario_laravel_posts/public",
     image: "/projects/publicaciones.webp",
@@ -120,7 +121,12 @@ const PROJECTS = [
         </div>
         <div class="w-1/2 flex flex-col justify-between">
           <div>
-            <h3 class="text-3xl font-bold">{title} - <span>{subtitle}</span></h3>
+            <h3 class="text-3xl font-bold">{title}
+              { 
+                subtitle && <span class="font-normal text-xl">- {subtitle}</span>  
+              }
+              
+            </h3>
             <ul>
               {tags.map((tag: any) =>
                 <span class={`opacity-90 inline-flex items-center justify-center rounded-full border border-gray-800 ${tag.bgColor} px-2 py-1 mx-1 my-3 text-xs font-medium backdrop-blur-3xl`}>
