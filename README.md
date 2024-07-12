@@ -3,7 +3,7 @@
 ```sh
 npm create astro@latest -- --template basics
 ```
-![screenshot](/screenshot.webp)
+![screenshot](/public/screenshot.webp)
 
 ## 🧞 Commands
 
