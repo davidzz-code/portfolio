@@ -3,6 +3,10 @@ import ThemeToggle from './ThemeToggle.astro'
 
 const MENUS = [
   {
+    title: 'Contacto',
+    href: '/#contact',
+  },
+  {
     title: 'Proyectos',
     href: '/#projects',
   },
@@ -11,19 +15,15 @@ const MENUS = [
     href: '/#experience',
   },
   {
-    title: 'Contacto',
-    href: '/#contact',
-  },
-  {
     title: 'Sobre mí',
     href: '/#about',
   },
 ]
 ---
 
-<header class="flex justify-center items-center w-[1000px] mt-5 py-4 fixed z-10">
-  <div class="bg-gray-300 dark:bg-gray-600 rounded-md px-16 py-2">
-    <nav class="flex flex-row gap-x-10 items-center opacity-80">
+<header class="flex justify-center items-center w-full mt-5 py-4 fixed z-10">
+  <div class="bg-gray-300 dark:bg-gray-600 rounded-md px-3 md:px-16 py-2">
+    <nav class="flex flex-row text-xs gap-x-3 md:text-base md:gap-x-10 items-center opacity-80">
       {
         MENUS.map(menu => (
           <a class="border-2 border-spacing-1 border-transparent hover:border-b-black dark:hover:border-b-white transition ease-in-out" href={menu.href} >{menu.title}</a>    
