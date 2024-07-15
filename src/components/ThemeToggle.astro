@@ -3,7 +3,7 @@ import SunIcon from "./icons/Sun.astro"
 import MoonIcon from "./icons/Moon.astro"
 import SystemIcon from "./icons/System.astro"
 
-const THEMES = ["Light", "Dark", "System"]
+const THEMES = ["Claro", "Oscuro", "Sistema"]
 ---
 
 <div class="relative ml-1 mr-1">
@@ -108,7 +108,16 @@ const THEMES = ["Light", "Dark", "System"]
 
   document.querySelectorAll(".themes-menu-option").forEach((element) => {
     element.addEventListener("click", (e) => {
-      localStorage.setItem("theme", e.target.innerText.toLowerCase().trim())
+      let themePreference = ''
+      if (e.target.innerText.toLowerCase().trim() === "sistema") {
+        themePreference = "system"
+      } else if (e.target.innerText.toLowerCase().trim() === "claro") {
+        themePreference = "light"
+      } else {
+        themePreference = "dark"
+      }
+
+      localStorage.setItem("theme", themePreference)
       updateTheme()
     })
   })
