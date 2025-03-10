@@ -9,6 +9,8 @@ import AngularIcon from "./icons/Angular.astro"
 import NodeIcon from "./icons/Node.astro"
 import GitHub from "./icons/GitHub.astro"
 import LinkIcon from "./icons/Link.astro"
+import ReactIcon from "./icons/React.astro"
+import ViteIcon from "./icons/Vite.astro"
 
 
 const TAGS = {
@@ -54,15 +56,36 @@ const TAGS = {
       textColor: "text-white",
       icon: AngularIcon,
     },
+    REACT: {
+      name: "React",
+      bgColor: "bg-[#58C4DC]",
+      textColor: "text-black",
+      icon: ReactIcon,
+    },
     NODEJS: {
       name: "Node.js",
       bgColor: "bg-black",
       textColor: "text-[#84CD29]",
       icon: NodeIcon,
     },
+    VITE: {
+      name: "Vite",
+      bgColor: "bg-[#9052af]",
+      textColor: "text-[#fff1ba]",
+      icon: ViteIcon,
+    },
 }
 
 const PROJECTS = [
+  {
+    title: "Tic Tac Loco",
+    subtitle: "Versión más desafiante del Tres en raya",
+    description: "Clásico juego de mesa pero con una dificultad añadida. Aquí no basta con poner fichas al azar, necesitas pensar y planear bien tus movimientos, casi como en el ajedrez, para ganar a tu oponente. Este proyecto está construido usando React, Vite y Tailwind CSS. Cuenta con modos de multijugador en local y de un jugador con un oponente de IA impulsado por ChatGPT a través de la API de OpenAI.",
+    link: "https://tic-tac-loco.vercel.app/",
+    github: "https://github.com/davidzz-code/Tic_tac_loco.git",
+    image: "/projects/tic-tac-loco.webp",
+    tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.VITE]
+  },
   {
     title: "Granny's Recipes",
     subtitle: "Buscador de recetas",
